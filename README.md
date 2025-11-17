@@ -13,7 +13,7 @@
 
     Step 1 — Clone the Repository
 
-        git clone https://github.com/<your-username>/string-calculator-tdd.git
+        git clone https://github.com/Kohad/string_calculator_tdd.git
         cd string-calculator-tdd
 
     Step 2 — Install Dependencies
