@@ -11,7 +11,14 @@ class StringCalculator
 
     if numbers.start_with?("//")
       delimiter_line, numbers = numbers.split("\n", 2)
-      delimiters << delimiter_line[2]
+
+      if delimiter_line.include?("[")
+        # Multi-character or multiple delimiters
+        delimiters += delimiter_line.scan(/\[(.*?)\]/).flatten
+      else
+        # Single char delimiter
+        delimiters << delimiter_line[2]
+      end
     end
 
     parts = numbers.split(Regexp.union(delimiters)).map(&:to_i)
